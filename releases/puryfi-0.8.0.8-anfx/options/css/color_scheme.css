@@ -1,0 +1,64 @@
+:root {
+   --main-background-color: #0B0E11;
+
+   --secondary-background-color: #151719;
+   --secondary-background-color-variant-1: #2C3135;
+   --secondary-background-color-variant-2: #212428;
+   --secondary-background-color-variant-3: #14171A;
+   --secondary-background-color-variant-4: #15181B;
+
+   --main-accent-color: #009879;
+   --main-accent-color-variant-1: #017A62;
+   --main-accent-color-variant-2: #0B5E50;
+   --main-accent-color-variant-3: #213E3A;
+   --main-accent-color-variant-4: #4AC193;
+
+   --main-text-color: #BBC9DF;
+   --main-text-color-variant-1: #EEEEEE;
+   --main-text-color-disabled: #BBC9DF99;
+   --header-text-color: #009879;
+   --tab-text-color: #BBC9DF;
+
+   --main-input-color: #2C3135;
+   --main-input-color-variant-1: #1F2A2D;
+
+   --main-border-color: #BBC9DF;
+   --border-color-variant-1: #646D78; /* Boxes 2 (Shadowed Buttons Enabled/Settings), GS Units */
+   --border-color-variant-2: #3A3F45; /* Boxes 1 (Toggle/Info) */
+   --border-color-variant-3: #111111; /* Radios, OOM */
+
+   /**
+     STATIC COLORS
+     - Not selectable by user
+     - Not affected by color deduction system
+    */
+
+   --warning-color: #d6d31f;
+   --warning-color-variant-1: #464805;
+   --warning-color-variant-2: #515b06;
+
+   --caution-button-color: #D51F37; /* Shadowed Button Red */
+   --caution-button-color-variant-1: #450510; /* Shadowed Button Boxshadow Red 1 */
+   --caution-button-color-variant-2: #5C0621; /* Shadowed Button Boxshadow Red 2 */
+
+   /* --selection-color: color-mix(
+      in hsl shorter hue,
+      #4AC193 20%,
+      transparent 80%
+   );
+   --selection-color-variant-1: color-mix(
+      in hsl shorter hue,
+      #4AC193 30%,
+      transparent 70%
+   );;
+   --selection-border-color: #4AC193; */
+   
+   --selection-color: rgb(22, 146, 241);
+   --selection-color-20\%: rgba(22, 146, 241, 0.2);
+   /* --selection-color-variant-1: rgba(22, 146, 241, 0.3); */
+   --selection-border-color: rgb(126, 199, 255);
+   
+   --patreon-color: #F74E57;
+   --patreon-color-variant-1: #4D2B29;
+   --patreon-color-border: #BF4047;
+}

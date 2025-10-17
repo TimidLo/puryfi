@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <link rel="stylesheet" href="../options/css/color_scheme.css" />
+      <link rel="stylesheet" href="../options/css/toggle.css" />
+      <link rel="stylesheet" href="popup.css" />
+   </head>
+   <body style="display: none">
+      <div
+         id="overall-state"
+         style="
+            margin-bottom: 12px;
+            display: block ruby;
+            width: 200px;
+            min-width: 200px;
+         "
+      >
+         <b
+            id="onoff"
+            style="
+               min-width: 36px;
+               display: block;
+               width: 32px;
+               font-size: 1.2rem;
+            "
+            >ON</b
+         >
+         <io-toggle id="onoff-toggle" class="control onoff" check="true">
+            <button
+               id="onoff-button"
+               class="checkbox onoff"
+               check="true"
+            ></button>
+         </io-toggle>
+         <div id="popup__unaddressed-issues" style="display: none">
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               width="16"
+            >
+               <path
+                  d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+                  fill="var(--caution-button-color)"
+               /></svg
+            ><span></span>
+         </div>
+         <svg
+            style="margin-left: 10px; display: none"
+            class="svg-inline--fa fa-lock fa-w-14 locked-icon"
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="lock"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            data-fa-i2svg=""
+         >
+            <path
+               fill="currentColor"
+               d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+            ></path>
+         </svg>
+      </div>
+      <div id="options">
+         <i class="fas fa-cog"></i>
+      </div>
+      <div id="censor-types-container" class="type-button-container">
+         <!-- <h3 style="margin-top: -5px;">Censor Type</h3> -->
+         <div id="censor-types" class="type-button-container">
+            <button
+               class="type-button type0 selected"
+               type="button"
+               id="normal"
+            >
+               <b data-i18n="censor-type__normal">Normal</b>
+            </button>
+            <button class="type-button type3" type="button" id="black">
+               <b data-i18n="censor-type__black">Black</b>
+            </button>
+            <button class="type-button type2" type="button" id="pixel">
+               <b data-i18n="censor-type__pixel">Pixel</b>
+            </button>
+            <button class="type-button type1" type="button" id="blur">
+               <b data-i18n="censor-type__blur">Blur</b>
+            </button>
+            <button class="type-button type4" type="button" id="triangle">
+               <b
+                  data-i18n="censor-type__triangle"
+                  style="margin-left: -2px; font-size: 85%"
+                  >Triangle</b
+               >
+            </button>
+            <button class="type-button type5" type="button" id="box">
+               <b data-i18n="censor-type__box">Box</b>
+            </button>
+            <button class="type-button type6" type="button" id="glitch">
+               <b data-i18n="censor-type__glitch">Glitch</b>
+            </button>
+            <button class="type-button type7" type="button" id="sticker">
+               <b data-i18n="censor-type__sticker">Sticker</b>
+            </button>
+            <button class="type-button type8" type="button" id="sobel">
+               <b data-i18n="censor-type__sobel">Sobel</b>
+            </button>
+            <button class="type-button type9" type="button" id="splatter">
+               <b data-i18n="censor-type__splatter">Splatter</b>
+            </button>
+            <button class="type-button type11" type="button" id="random">
+               <b data-i18n="censor-type__random">Random</b>
+            </button>
+            <button class="type-button type10" type="button" id="mixed">
+               <b data-i18n="censor-type__mixed">Mixed</b>
+            </button>
+         </div>
+         <div
+            style="
+               writing-mode: vertical-lr;
+               height: 100%;
+               font-weight: bold;
+               font-size: 1.25rem;
+               white-space: nowrap;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin-left: 4px;
+               margin-right: -3px;
+               border-radius: 4px;
+               padding: 0.5px;
+               letter-spacing: 0.5px;
+               background-color: var(--main-accent-color);
+               color: var(--main-background-color);
+            "
+            data-i18n="popup__censor__mode"
+         >
+            Censor Mode
+         </div>
+      </div>
+      <div
+         id="body-labels-container"
+         class="label-button-container"
+         style="margin: 12px 0 2px 0"
+      >
+         <div id="body-labels" class="label-button-container">
+            <button class="label-button fface" type="button" id="FACEFEMALE">
+               <b
+                  >♀<span style="margin-left: 5px" data-i18n="labels__face"
+                     >Face</span
+                  ></b
+               >
+            </button>
+            <button class="label-button mface" type="button" id="FACEMALE">
+               <b
+                  >♂<span style="margin-left: 5px" data-i18n="labels__face"
+                     >Face</span
+                  ></b
+               >
+            </button>
+
+            <button
+               class="label-button eye experimental-content-required"
+               style="display: none"
+               type="button"
+               id="EYE"
+            >
+               <b data-i18n="labels__eye">Eye</b>
+            </button>
+            <button
+               class="label-button mouth experimental-content-required"
+               style="display: none"
+               type="button"
+               id="MOUTH"
+            >
+               <b data-i18n="labels__mouth">Mouth</b>
+            </button>
+
+            <button
+               class="label-button apite icon-public"
+               type="button"
+               id="ARMPITSEXPOSED"
+            >
+               <b data-i18n="labels__armpit-exposed">Armpit</b>
+            </button>
+            <button
+               class="label-button apitc"
+               type="button"
+               id="ARMPITSCOVERED"
+            >
+               <b data-i18n="labels__armpit-exposed">Armpit</b>
+            </button>
+
+            <button
+               class="label-button nipplee experimental-content-required"
+               style="display: none"
+               type="button"
+               id="NIPPLEEXPOSED"
+            >
+               <b data-i18n="labels__nipple-exposed">Nipple</b>
+            </button>
+            <button
+               class="label-button nipplec experimental-content-required"
+               style="display: none"
+               type="button"
+               id="NIPPLECOVERED"
+            >
+               <b data-i18n="labels__nipple-exposed">Nipple</b>
+            </button>
+
+            <button
+               class="label-button ftite icon-public"
+               type="button"
+               id="FEMALEBREASTEXPOSED"
+            >
+               <b>♀ <b data-i18n="labels__breast-exposed">Breast</b></b>
+            </button>
+            <button
+               class="label-button ftitc"
+               type="button"
+               id="FEMALEBREASTCOVERED"
+            >
+               <b>♀ <b data-i18n="labels__breast-exposed">Breast</b></b>
+            </button>
+
+            <button
+               class="label-button mtite"
+               type="button"
+               id="MALEBREASTEXPOSED"
+            >
+               <b>♂ <b data-i18n="labels__breast-exposed">Breast</b></b>
+            </button>
+            <button
+               class="label-button mtitc"
+               type="button"
+               id="MALEBREASTCOVERED"
+            >
+               <b>♂ <b data-i18n="labels__breast-exposed">Breast</b></b>
+            </button>
+
+            <button
+               class="label-button bellye icon-public"
+               type="button"
+               id="BELLYEXPOSED"
+            >
+               <b data-i18n="labels__belly-exposed">Belly</b>
+            </button>
+            <button class="label-button bellyc" type="button" id="BELLYCOVERED">
+               <b data-i18n="labels__belly-exposed">Belly</b>
+            </button>
+
+            <button
+               class="label-button hande experimental-content-required"
+               style="display: none"
+               type="button"
+               id="HANDEXPOSED"
+            >
+               <b data-i18n="labels__hand-exposed">Hand</b>
+            </button>
+            <button
+               class="label-button handc experimental-content-required"
+               style="display: none"
+               type="button"
+               id="HANDCOVERED"
+            >
+               <b data-i18n="labels__hand-exposed">Hand</b>
+            </button>
+
+            <button
+               class="label-button butte"
+               type="button"
+               id="BUTTOCKSEXPOSED"
+            >
+               <b data-i18n="labels__buttocks-exposed">Buttocks</b>
+            </button>
+            <button
+               class="label-button buttc"
+               type="button"
+               id="BUTTOCKSCOVERED"
+            >
+               <b data-i18n="labels__buttocks-exposed">Buttocks</b>
+            </button>
+
+            <button
+               class="label-button anuse icon-public"
+               type="button"
+               id="ANUSEXPOSED"
+            >
+               <b data-i18n="labels__anus-exposed">Anus</b>
+            </button>
+            <button class="label-button anusc" type="button" id="ANUSCOVERED">
+               <b data-i18n="labels__anus-exposed">Anus</b>
+            </button>
+
+            <button
+               class="label-button fgene icon-public"
+               type="button"
+               id="FEMALEGENITALIAEXPOSED"
+            >
+               <b>♀<b data-i18n="labels__genitalia-short">Gen.</b></b>
+            </button>
+            <button
+               class="label-button fgenc"
+               type="button"
+               id="FEMALEGENITALIACOVERED"
+            >
+               <b>♀<b data-i18n="labels__genitalia-short">Gen.</b></b>
+            </button>
+
+            <button
+               class="label-button mgene icon-public"
+               type="button"
+               id="MALEGENITALIAEXPOSED"
+            >
+               <b>♂<b data-i18n="labels__genitalia-short">Gen.</b></b>
+            </button>
+            <button
+               class="label-button mgenc"
+               type="button"
+               id="MALEGENITALIACOVERED"
+            >
+               <b>♂<b data-i18n="labels__genitalia-short">Gen.</b></b>
+            </button>
+
+            <div
+               class="experimental-content-required"
+               style="display: none"
+            ></div>
+            <button class="label-button feete" type="button" id="FEETEXPOSED">
+               <b data-i18n="labels__feet-exposed">Foot</b>
+            </button>
+            <button class="label-button feetc" type="button" id="FEETCOVERED">
+               <b data-i18n="labels__feet-exposed">Foot</b>
+            </button>
+            <div
+               class="experimental-content-required"
+               style="display: none"
+            ></div>
+         </div>
+         <div
+            style="
+               writing-mode: vertical-lr;
+               height: 100%;
+               font-weight: bold;
+               font-size: 1.25rem;
+               white-space: nowrap;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin-left: 4px;
+               margin-right: -3px;
+               border-radius: 4px;
+               padding: 0.5px;
+               letter-spacing: 0.5px;
+               background-color: var(--main-accent-color);
+               color: var(--main-background-color);
+            "
+            data-i18n="popup__censor__content"
+         >
+            Censored Content
+         </div>
+      </div>
+      <div id="timer-container" style="display: none">
+         <div style="text-align: center; margin-bottom: 12px">
+            <h2 data-i18n="popup__timer-container__locked-until">
+               Locked until:
+            </h2>
+         </div>
+         <div style="text-align: center">
+            <div
+               id="locked-days"
+               class="locked-dur"
+               style="display: inline-block"
+            ></div>
+            <span data-i18n="options__security__days">Days</span>
+            <div
+               id="locked-hours"
+               class="locked-dur"
+               style="display: inline-block"
+            ></div>
+            <span data-i18n="options__security__hours">Hours</span>
+            <div
+               id="locked-minutes"
+               class="locked-dur"
+               style="display: inline-block"
+            ></div>
+            <span data-i18n="options__security__minutes">Minutes</span>
+            <div
+               id="locked-seconds"
+               class="locked-dur"
+               style="display: inline-block"
+            ></div>
+            <span data-i18n="options__security__seconds">Seconds</span>
+         </div>
+      </div>
+      <div
+         id="reverse_mode"
+         style="display: none; padding-left: 5px; padding-right: 5px"
+      >
+         <hr style="margin-bottom: 5px; clear: both; visibility: hidden" />
+         <b id="toggle_labels">
+            <i class="fas fa-exchange-alt"></i>
+         </b>
+         <div style="float: right; display: inline-flex">
+            <b data-i18n="popup__popup__reverse-mode" style="margin-right: 5px"
+               >Reverse Mode:</b
+            >
+            <div id="reverse_censoring">
+               <io-toggle
+                  id="reverse_censoring-io"
+                  label="reverse_censoring"
+                  class="control reverseToggle"
+               >
+                  <button
+                     id="reverse_censoring-button"
+                     label="reverse_censoring"
+                     class="checkbox reverseToggle"
+                  ></button>
+               </io-toggle>
+            </div>
+         </div>
+      </div>
+      <script src="../static/libs/jquery.min.js"></script>
+      <script src="../options/color_scheme.js"></script>
+      <script src="../core/vendor.bundle.js"></script>
+      <script src="../core/puryfi-core-context.bundle.js"></script>
+      <script src="../core/puryfi-core-context-export.js"></script>
+      <script src="../options/options.js"></script>
+      <script src="./popup.js"></script>
+      <script src="../options/settings.js"></script>
+      <script src="../options/lock.js"></script>
+      <script src="../static/api.js"></script>
+      <script src="/options/all.min.js"></script>
+      <script src="../options/language/localization.js"></script>
+   </body>
+</html>

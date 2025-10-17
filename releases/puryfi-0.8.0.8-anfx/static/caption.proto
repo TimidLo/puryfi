@@ -1,0 +1,38 @@
+package captionpackage;
+syntax = "proto3";
+
+message CaptionEntry {
+   double chance = 2;
+   string value = 1;
+   repeated int32 on_content = 3;
+   repeated string tags = 4;
+}
+
+message CaptionTag {
+   string name = 1;
+   string color = 2;
+}
+
+message CaptionPresetConfiguration {
+   map<string, CaptionTag> tags = 1;
+   map<string, CaptionEntry> entries = 2;
+   int32 mode = 3;
+   string color = 4;
+   string font = 5;
+   string font_style = 6;
+   double line_height = 7;
+   double shadow_size = 8;
+   string shadow_color = 9;
+   int32 padding = 10;
+}
+
+message CaptionPreset {
+   string name = 2;
+   CaptionPresetConfiguration config = 1;
+}
+
+message CaptionConfiguration {
+   bool enabled = 1;
+   int32 selected_preset_index = 2;
+   repeated CaptionPreset presets = 3;
+}

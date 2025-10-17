@@ -1,0 +1,4 @@
+img[data-puryfi-preemptive-blur],
+video[data-puryfi-preemptive-blur] {
+   filter: blur(50px) !important;
+}

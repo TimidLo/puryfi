@@ -1,0 +1,1010 @@
+select,
+input[type="checkbox"] {
+   color: var(--main-text-color);
+   background-color: var(--main-input-color);
+   border: 0;
+   cursor: pointer;
+}
+select {
+   background-color: var(--secondary-background-color-variant-1);
+}
+.content-general {
+   display: none;
+}
+.content,
+#login_form {
+   input[type="number"],
+   input[type="text"],
+   input[type="password"] {
+      text-overflow: ellipsis;
+      color: var(--main-text-color);
+      background-color: var(--secondary-background-color-variant-1);
+      border: 1px solid transparent;
+      cursor: text;
+   }
+}
+input[type="radio"] {
+   cursor: pointer;
+   -webkit-appearance: none;
+   display: inline-block;
+   position: relative;
+   margin-top: 0;
+}
+.content input[type="radio"]::after {
+   display: flex;
+   flex-shrink: 0;
+   content: "";
+   background-color: var(--main-input-color);
+   width: 1rem;
+   height: 1rem;
+   border-radius: 50%;
+   transition: 0.1s background-color ease;
+   border: 3px solid var(--border-color-variant-3);
+}
+.content input[type="radio"]:focus-visible {
+   width: 19px;
+   height: 19px;
+   border-radius: 100%;
+   outline: none;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+.content input[type="radio"]:checked::after {
+   background-color: var(--main-accent-color);
+   border: 3px solid var(--main-accent-color-variant-3);
+}
+input[type="radio"].patreon_locked:checked::after {
+   background-color: var(--patreon-color);
+   border: 3px solid #4d2b29;
+}
+input[type="radio"].patreon_locked,
+input[type="range"].patreon_locked,
+input[type="number"].patreon_locked,
+input[type="text"].patreon_locked,
+input[type="checkbox"].patreon_locked,
+textarea.patreon_locked,
+select.patreon_locked {
+   pointer-events: none;
+}
+div.patreon_locked label {
+   pointer-events: none;
+}
+
+.no-style-button {
+   font-family: inherit;
+   padding: 0;
+   border: none;
+}
+
+.no-style-button:focus {
+   outline: none;
+}
+
+input[type="checkbox"] {
+   cursor: pointer;
+   -webkit-appearance: none;
+   margin: 0;
+   min-width: 20px;
+   min-height: 20px;
+   border-width: 2px 1px;
+   border-style: solid;
+   border-color: var(--main-border-color);
+}
+input[type="checkbox"].partially-checked {
+   background-color: var(--main-accent-color);
+   background-image: repeating-linear-gradient(
+      135deg,
+      var(--main-input-color) 0px,
+      var(--main-input-color) 6px,
+      transparent 6px,
+      transparent 12px
+   );
+}
+input[type="checkbox"]:checked,
+.entries-table input[type="checkbox"]:checked {
+   background-color: var(--main-accent-color);
+}
+input[type="checkbox"].danger {
+   border-color: var(--caution-button-color);
+}
+input[type="checkbox"].warning {
+   border-color: var(--warning-color);
+}
+.content input[type="radio"]:hover::after,
+.content input[type="radio"]:checked:hover::after,
+.content input[type="checkbox"]:hover {
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+
+.content,
+#login_form {
+   input[type="text"],
+   input[type="password"] {
+      border: 1px solid transparent;
+   }
+}
+
+.content,
+#login_form {
+   select,
+   input[type="number"]:focus,
+   input[type="text"]:focus,
+   input[type="password"]:focus,
+   button.copy-button:focus,
+   button.paste-button:focus {
+      outline: none;
+   }
+}
+button.copy-button:focus-visible,
+button.paste-button:focus-visible {
+   border-bottom: 4px solid var(--main-border-color);
+}
+input[type="checkbox"]:focus {
+   outline: none;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+
+.content,
+#login_form {
+   input[type="number"]:focus,
+   input[type="text"]:focus,
+   input[type="password"]:focus {
+      border-bottom: 1px solid var(--main-border-color);
+   }
+}
+
+button.imageButton {
+   color: var(--main-text-color);
+   background-size: cover;
+   background-position: center center;
+   width: 50px;
+   height: 50px;
+   border-radius: 4px 4px 4px 4px;
+   text-shadow: 0 0 9px #000000;
+   -webkit-filter: grayscale(80%);
+   cursor: pointer;
+   padding: 0px;
+}
+button.type-button-s,
+button.icon-button-l {
+   position: relative;
+   color: var(--main-text-color-variant-1);
+   text-shadow: 0 0 9px #000000;
+   -webkit-filter: grayscale(80%);
+   cursor: pointer;
+   background-size: cover;
+   background-position: center center;
+   border-radius: 4px 4px 4px 4px;
+   border: 1px solid var(--main-border-color);
+}
+button.type-button-s {
+   width: 50px;
+   height: 50px;
+}
+#random_table button.type-button-s {
+   box-shadow: none;
+   border: none;
+   cursor: default;
+}
+button.icon-button-l {
+   width: 52px;
+   height: 52px;
+}
+button.iconButton {
+   color: white;
+   background-size: cover;
+   background-position: center center;
+   width: 50px;
+   height: 50px;
+   text-shadow: 0 0 9px #000000;
+   border: 2px solid var(--main-border-color);
+   border-radius: 4px 4px 4px 4px;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+   cursor: pointer;
+}
+button.iconButton:active {
+   position: relative;
+   top: 2px;
+   left: 2px;
+   box-shadow: inset -12px -8px 40px #46464620;
+}
+button.shadowed-button:disabled,
+button.shadowed-button.locked {
+   position: relative;
+   pointer-events: none;
+   filter: brightness(60%);
+}
+button.shadowed-button {
+   height: 1.625rem;
+   white-space: nowrap;
+   color: var(--main-text-color);
+   background-color: var(--secondary-background-color-variant-1);
+   border: 2px solid var(--border-color-variant-1);
+   box-shadow: 2px 2px var(--secondary-background-color-variant-2),
+      4px 4px var(--secondary-background-color-variant-1);
+   cursor: pointer;
+}
+button.shadowed-button:focus-visible {
+   outline: none;
+   box-shadow: 2px 2px var(--secondary-background-color-variant-2),
+      4px 4px var(--secondary-background-color-variant-1), 1px 1px 1px black,
+      0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+button.shadowed-button.danger:disabled,
+.button.shadowed-button.danger.locked {
+   color: #4a5059 !important;
+   border: 2px solid #3f1f29 !important;
+   background-color: #301c21 !important;
+   box-shadow: 2px 2px #301c21, 4px 4px #3e2026 !important;
+   pointer-events: none;
+}
+button.shadowed-button.danger {
+   color: var(--main-text-color);
+   border: 2px solid var(--caution-button-color);
+   background-color: var(--caution-button-color-variant-2);
+   box-shadow: 2px 2px var(--caution-button-color-variant-1),
+      4px 4px var(--caution-button-color-variant-2);
+   cursor: pointer;
+}
+button.shadowed-button:active,
+button.shadowed-button.danger:active {
+   position: relative;
+   top: 2px;
+   left: 2px;
+   box-shadow: none;
+   transition: all 0.1s;
+}
+button.shadowed-mbutton {
+   padding: 0;
+   height: 16px;
+   color: var(--main-text-color);
+   background-color: var(--main-input-color-variant-1);
+   border: none;
+   box-shadow: 1px 1px var(--secondary-background-color-variant-2);
+   cursor: pointer;
+}
+
+.puryfi-settings-sb-icon svg:hover path,
+button.shadowed-mbutton svg:hover path,
+button.puryfi-settings-sm-button svg:hover path {
+	filter: drop-shadow(0 0 1px var(--main-text-color));
+}
+button.shadowed-mbutton:active {
+   position: relative;
+   top: 1px;
+   left: 1px;
+   box-shadow: none;
+   transition: all 0.1s;
+}
+input.setting-input {
+   padding: 0 10px;
+   width: 55%;
+   height: calc(var(--general-setting-field-height) - 2px);
+}
+input.setting-input:not(.gs-grid-trio input.setting-input) {
+   max-width: 48px;
+}
+.gs-grid-trio input.setting-input {
+   max-width: 28px;
+}
+input.setting-text-input {
+   box-sizing: border-box;
+   padding: 0 10px;
+   width: 100%;
+   height: var(--general-setting-field-height);
+}
+input.setting_text_box {
+   padding: 0 10px;
+   width: 100%;
+   height: 30px;
+   background-color: #ff0000;
+}
+input.sticker_collection_input {
+   padding: 5px;
+   width: 183px;
+   font-size: 0.9em;
+}
+input.setting-input,
+input.setting-text-input {
+   -moz-appearance: textfield;
+}
+input.setting-input,
+select.setting-dropdown {
+   font-size: 0.7rem;
+}
+select.setting-dropdown {
+   padding: 7px;
+   width: 100%;
+   height: 32px;
+   -moz-appearance: textfield;
+   appearance: none;
+   text-overflow: ellipsis;
+   background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNC45NSAxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNIDEuNjUzIDQuNjk2IEwgMS41NjUgNC43ODIgTCAyLjAxMSA1LjIxNCBMIDIuNDU4IDUuNjQ2IEwgMi45MDMgNS4yMTQgTCAzLjM0OSA0Ljc4MiBMIDMuMjYyIDQuNjk2IEwgMy4xNzIgNC42MSBMIDIuODE1IDQuOTU2IEwgMi40NTggNS4zMDIgTCAyLjEgNC45NTYgTCAxLjc0MyA0LjYxIEwgMS42NTMgNC42OTYgWiIgc3R5bGU9ImZpbGw6IHJnYigxODcsIDIwMSwgMjIzKTsiLz4KPC9zdmc+)
+      no-repeat 100% 50%;
+   background-color: var(--secondary-background-color-variant-1);
+}
+select.setting-dropdown:focus-visible {
+   background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNC45NSAxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNIDEuNjUzIDQuNjk2IEwgMS41NjUgNC43ODIgTCAyLjAxMSA1LjIxNCBMIDIuNDU4IDUuNjQ2IEwgMi45MDMgNS4yMTQgTCAzLjM0OSA0Ljc4MiBMIDMuMjYyIDQuNjk2IEwgMy4xNzIgNC42MSBMIDIuODE1IDQuOTU2IEwgMi40NTggNS4zMDIgTCAyLjEgNC45NTYgTCAxLjc0MyA0LjYxIEwgMS42NTMgNC42OTYgWiIgc3R5bGU9ImZpbGw6IHJnYigyNTUsIDI1NSwgMjU1KTsiLz4KPC9zdmc+)
+      no-repeat 100% 50%;
+   background-color: var(--secondary-background-color-variant-1);
+}
+button.type-button-s b,
+button.icon-button-l b {
+   padding: 0px;
+   font-size: 80%;
+}
+button.selected {
+   /* border-color: #16a085; */
+   -webkit-filter: grayscale(0%);
+}
+
+.mixed-entry[data-censor-type] button.mixed-entry-button {
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+   text-shadow: 0 0 9px #000000;
+   font-size: 0.6rem;
+   /* -webkit-filter: grayscale(80%); */
+   background-size: cover;
+   background-position: center center;
+   border: 1px solid var(--main-border-color);
+   border-radius: 4px;
+}
+
+.mixed-entry[data-censor-type]
+   button.mixed-entry-button:hover
+   + button.mixed-entry-remove-button,
+.mixed-entry[data-censor-type] button.mixed-entry-remove-button:hover {
+   visibility: visible;
+   opacity: 1;
+   transition: opacity 0.2s;
+}
+
+button.mixed-entry-remove-button {
+   opacity: 0;
+   visibility: hidden;
+   /* transition: opacity 0.2s, visibility 0s 0.2s; */
+   position: absolute;
+   font-weight: bold;
+   border: 1px solid white;
+   display: grid;
+   place-items: center;
+   height: 16px;
+   width: 16px;
+   right: 3px;
+   top: 3px;
+   background-color: #ff424d;
+   border-radius: 4px;
+   cursor: pointer;
+   padding: 0;
+}
+
+.mixed-entry-button-plus {
+   filter: none !important;
+   display: none;
+}
+
+.mixed-entry:not([data-censor-type]) .mixed-entry-button-plus {
+   display: block;
+}
+/* 
+.mixed-entry:not([data-censor-type]) button.mixed-entry-button::after {
+   position: absolute;
+   filter: none;
+   content: "";
+   grid-row: 1;
+   grid-column: 1;
+   left: 8px;
+   top: 8px;
+   width: 34px;
+   height: 34px;
+   box-shadow: inset 4px 4px 8px 0px rgba(0, 0, 0, 0.65);
+} */
+
+.mixed-entry:not([data-censor-type]) button.mixed-entry-button {
+   background-color: inherit;
+   display: grid;
+   border: none;
+   border-radius: 4px;
+   padding: 0;
+}
+
+.mixed-entry[data-censor-type] button.mixed-entry-button:not(.selected) {
+   filter: grayscale(80%);
+}
+
+button.mixed-entry-button {
+   filter: grayscale(0%);
+   position: relative;
+   font-weight: bold;
+   height: 50px;
+   width: 50px;
+   color: var(--main-text-color-variant-1);
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+button.censor-mode-button {
+   text-shadow: 0 0 9px #000000;
+   position: relative;
+   font-size: 0.6rem;
+   height: 50px;
+   width: 50px;
+   font-weight: bold;
+   color: var(--main-text-color-variant-1);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+select:disabled {
+   cursor: default;
+}
+
+button.type0,
+.mixed-entry[data-censor-type="0"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="0"] {
+   background-image: url(../../images/buttons/normal.png);
+}
+button.type1,
+.mixed-entry[data-censor-type="1"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="1"] {
+   background-image: url(../../images/buttons/pixel.png);
+}
+button.type2,
+.mixed-entry[data-censor-type="2"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="2"] {
+   background-image: url(../../images/buttons/blur.png);
+}
+button.type3,
+.mixed-entry[data-censor-type="3"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="3"] {
+   background-image: url(../../images/buttons/black.png);
+}
+button.type4,
+.mixed-entry[data-censor-type="4"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="4"] {
+   background-image: url(../../images/buttons/triangle.png);
+}
+button.type5,
+.mixed-entry[data-censor-type="5"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="5"] {
+   background-image: url(../../images/buttons/box.png);
+}
+button.type6,
+.mixed-entry[data-censor-type="6"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="6"] {
+   background-image: url(../../images/buttons/glitch.png);
+}
+button.type7,
+.mixed-entry[data-censor-type="7"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="7"] {
+   background-image: url(../../images/buttons/sticker.png);
+}
+button.type8,
+.mixed-entry[data-censor-type="8"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="8"] {
+   background-image: url(../../images/buttons/sobel.png);
+}
+button.type9,
+.mixed-entry[data-censor-type="9"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="9"] {
+   background-image: url(../../images/buttons/splatter.png);
+}
+button.type10,
+.mixed-entry[data-censor-type="10"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="10"] {
+   background-image: url(../../images/buttons/mixed.png);
+}
+button.type11,
+.mixed-entry[data-censor-type="11"] .mixed-entry-button,
+.censor-mode-button[data-censor-type="11"] {
+   background-image: url(../../images/buttons/random.png);
+}
+.mixed-entry[data-censor-type="0"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="0"]::before {
+   content: "Normal";
+}
+.mixed-entry[data-censor-type="1"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="1"]::before {
+   content: "Pixel";
+}
+.mixed-entry[data-censor-type="2"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="2"]::before {
+   content: "Blur";
+}
+.mixed-entry[data-censor-type="3"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="3"]::before {
+   content: "Bar";
+}
+.mixed-entry[data-censor-type="4"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="4"]::before {
+   content: "Triangle";
+}
+.mixed-entry[data-censor-type="5"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="5"]::before {
+   content: "Box";
+}
+.mixed-entry[data-censor-type="6"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="6"]::before {
+   content: "Glitch";
+}
+.mixed-entry[data-censor-type="7"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="7"]::before {
+   content: "Sticker";
+}
+.mixed-entry[data-censor-type="8"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="8"]::before {
+   content: "Sobel";
+}
+.mixed-entry[data-censor-type="9"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="9"]::before {
+   content: "Splatter";
+}
+.mixed-entry[data-censor-type="10"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="10"]::before {
+   content: "Mixed";
+}
+.mixed-entry[data-censor-type="11"] .mixed-entry-button::before,
+.censor-mode-button[data-censor-type="11"]::before {
+   content: "Random";
+}
+button.typecm {
+   background-image: url(../../images/buttons/clustering.png);
+   font-size: 90%;
+}
+button.typecpm {
+   background-image: url(../../images/buttons/word_wall.png);
+   font-size: 90%;
+}
+button.typeww {
+   background-image: url(../../images/buttons/word_wall.png);
+   font-size: 90%;
+}
+button.typerm {
+   background-image: url(../../images/buttons/reverse.png);
+}
+button.copy-button,
+button.paste-button {
+   float: right;
+   cursor: pointer;
+   margin-top: -2px;
+   margin-right: 25px;
+   position: relative;
+   padding: 0;
+   color: var(--main-text-color);
+   border-color: var(--main-border-color);
+   border-style: solid;
+   border-width: 0 2px 2px 2px;
+}
+button.copy-button::after,
+button.paste-button::after {
+   content: "";
+   width: 100%;
+   height: calc(100% - 3px);
+   position: absolute;
+   left: -2px;
+   top: 1px;
+   border: 2px solid transparent;
+   box-shadow: 1px 1px 1px var(--border-color-variant-2);
+}
+button.copy-button,
+button.paste-button {
+   background-color: var(--secondary-background-color-variant-3);
+}
+button.copy-button div,
+button.paste-button div {
+   background-color: var(--secondary-background-color-variant-3);
+   padding: 4px 5px 2px 5px;
+   filter: brightness(1);
+   transition: filter 0.15s ease-in;
+}
+button.copy-button:active div,
+button.paste-button:active div {
+   filter: brightness(2);
+   transition: all 0.05s linear;
+}
+button.labelButton,
+button.labelButton-s {
+   color: white;
+   text-align: center;
+   padding: 0px;
+   border-radius: 4px;
+   background-size: cover;
+   background-position: center center;
+   text-shadow: 0 0 9px #000000;
+   -webkit-filter: grayscale(80%);
+   cursor: pointer;
+}
+button.labelButton {
+   width: 46px;
+   height: 46px;
+   max-width: 46px;
+   max-height: 46px;
+}
+button.labelButton:focus-visible,
+button.icon-button-l:focus-visible,
+button.type-button-l:focus-visible,
+button.mixed-label-type-button:focus-visible,
+button.statistic-label-type-button:focus-visible,
+button.iconButton:focus-visible,
+button.imageButton:focus-visible {
+   outline: 1px solid;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+button.themeButton:focus-visible {
+   outline: none;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+}
+button.labelButton-s {
+   width: 30px;
+   height: 30px;
+   max-width: 30px;
+   max-height: 30px;
+   outline: none !important;
+   position: relative;
+   overflow: visible;
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+   border: 1px solid var(--main-text-color-disabled);
+}
+@media only screen and (min-resolution: 1.7dppx) {
+   .ct-bottom button.labelButton-s {
+      width: 28px;
+      height: 28px;
+      max-width: 28px;
+      max-height: 28px;
+   }
+}
+button.labelButton-s.partially-selected {
+   filter: grayscale(40%);
+   border: 1px solid var(--main-text-color);
+}
+button.labelButton-s.selected {
+   border: 1px solid var(--main-text-color-variant-1);
+}
+button.labelButton:not(.bodypart-grid button.labelButton),
+button.mixed-label-type-button,
+button.icon-button-l {
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+   border: 1px solid var(--main-text-color-variant-1);
+}
+button.labelButton-s {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.bodypart-grid button.labelButton {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border: 1px solid #999;
+   transition: 0.1s;
+}
+button.labelButton.selected {
+   box-shadow: 1px 1px 1px black, 0 0 0.4em #ccc, 0 0 0.2em #ddd;
+   border: 1px solid var(--main-text-color-variant-1);
+   transition: 0.1s;
+}
+button.labelButton-s.partially-selected {
+   border-top: 1px solid var(--main-text-color-variant-1);
+   border-left: 1px solid var(--main-text-color-variant-1);
+   border-right: 1px solid var(--main-text-color-disabled);
+   border-bottom: 1px solid var(--main-text-color-disabled);
+   transition: 0.1s;
+   filter: grayscale(0%);
+}
+button.labelButton-s.partially-selected:after {
+   content: "";
+   pointer-events: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      to bottom right,
+      #fff,
+      #fff 52%,
+      transparent 52%,
+      transparent
+   );
+   clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+button.labelButton-s.partially-selected:before {
+   content: "";
+   pointer-events: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-position: center center;
+   background-size: cover;
+   filter: grayscale(100%);
+   clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.labelButton b {
+   visibility: hidden;
+}
+.labelButton:hover b {
+   visibility: visible;
+}
+
+button::-moz-focus-inner {
+   border: 0;
+}
+
+button.type-button-s.fullgray,
+button.icon-button-l.fullgray {
+   -webkit-filter: grayscale(100%);
+}
+
+button.selected.fullgray {
+   -webkit-filter: grayscale(100%);
+}
+
+button.selected {
+   -webkit-filter: grayscale(0%);
+}
+
+button.fface,
+button.labelButton-s.fface.partially-selected:before {
+   background-image: url(../../images/buttons/face_female.png);
+}
+button.mface,
+button.labelButton-s.mface.partially-selected:before {
+   background-image: url(../../images/buttons/face_male.png);
+}
+button.eye,
+button.labelButton-s.eye.partially-selected:before {
+   background-image: url(../../images/buttons/eye.png);
+}
+button.mouth,
+button.labelButton-s.mouth.partially-selected:before {
+   background-image: url(../../images/buttons/mouth.png);
+}
+button.apite,
+button.labelButton-s.apite.partially-selected:before {
+   background-image: url(../../images/buttons/armpit_exposed.png);
+}
+button.apite.icon-public,
+button.labelButton-s.apite.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/armpit_exposed_public.png);
+}
+button.apitc,
+button.labelButton-s.apitc.partially-selected:before {
+   background-image: url(../../images/buttons/armpit_covered.png);
+}
+button.nipplee,
+button.labelButton-s.nipplee.partially-selected:before {
+   background-image: url(../../images/buttons/nipple_exposed.png);
+}
+button.nipplec,
+button.labelButton-s.nipplec.partially-selected:before {
+   background-image: url(../../images/buttons/nipple_covered.png);
+}
+button.ftite,
+button.labelButton-s.ftite.partially-selected:before {
+   background-image: url(../../images/buttons/breasts_female_exposed.png);
+}
+button.ftite.icon-public,
+button.labelButton-s.ftite.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/breast_female_exposed_public.png);
+}
+button.ftitc,
+button.labelButton-s.ftitc.partially-selected:before {
+   background-image: url(../../images/buttons/breasts_female_covered.png);
+}
+button.mtite,
+button.labelButton-s.mtite.partially-selected:before {
+   background-image: url(../../images/buttons/breasts_male.png);
+}
+button.mtitc,
+button.labelButton-s.mtitc.partially-selected:before {
+   background-image: url(../../images/buttons/breasts_male_covered.png);
+}
+button.bellye,
+button.labelButton-s.bellye.partially-selected:before {
+   background-image: url(../../images/buttons/belly.png);
+}
+button.bellye.icon-public,
+button.labelButton-s.bellye.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/belly_public.png);
+}
+button.bellyc,
+button.labelButton-s.bellyc.partially-selected:before {
+   background-image: url(../../images/buttons/belly_covered.png);
+}
+button.hande,
+button.labelButton-s.hande.partially-selected:before {
+   background-image: url(../../images/buttons/hand_exposed.png);
+}
+button.handc,
+button.labelButton-s.handc.partially-selected:before {
+   background-image: url(../../images/buttons/hand_covered.png);
+}
+button.butte,
+button.labelButton-s.butte.partially-selected:before {
+   background-image: url(../../images/buttons/buttocks_exposed.png);
+}
+button.buttc,
+button.labelButton-s.buttc.partially-selected:before {
+   background-image: url(../../images/buttons/buttocks_covered.png);
+}
+button.fgene,
+button.labelButton-s.fgene.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_female_exposed.png);
+}
+
+.icon-public {
+   background-color: var(--main-accent-color);
+}
+
+button.anuse,
+button.labelButton-s.anuse.partially-selected:before {
+   background-image: url(../../images/buttons/anus_exposed.png);
+}
+button.anuse.icon-public,
+button.labelButton-s.anuse.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/anus_exposed_public.png);
+}
+button.anusc,
+button.labelButton-s.anusc.partially-selected:before {
+   background-image: url(../../images/buttons/anus_covered.png);
+}
+button.fgene.icon-public,
+button.labelButton-s.fgene.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_female_exposed_public.png);
+}
+button.fgenc,
+button.labelButton-s.fgenc.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_female_covered.png);
+}
+button.mgene,
+button.labelButton-s.mgene.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_male_exposed.png);
+}
+button.mgene.icon-public,
+button.labelButton-s.mgene.icon-public.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_male_exposed_public.png);
+}
+button.mgenc,
+button.labelButton-s.mgenc.partially-selected:before {
+   background-image: url(../../images/buttons/genitals_male_covered.png);
+}
+button.feete,
+button.labelButton-s.feete.partially-selected:before {
+   background-image: url(../../images/buttons/feet_exposed.png);
+}
+button.feetc,
+button.labelButton-s.feetc.partially-selected:before {
+   background-image: url(../../images/buttons/feet_covered.png);
+}
+
+button.icon-classic {
+   background-image: url(../../icons/icon_64.png);
+}
+button.icon-minimalistic {
+   background-image: url(../../icons/icon_64_minimalistic.png);
+}
+button.icon-eye {
+   background-image: url(../../icons/icon_64_eye.png);
+}
+
+#debug {
+   background-image: url(../../images/buttons/debug.png);
+   font-size: 80%;
+}
+.label-button-container {
+   display: inline-flex;
+   flex-wrap: wrap;
+   width: 100px;
+}
+button.mixed-label-type-button.selected {
+   -webkit-filter: grayscale(0%);
+   transition: 0.1s;
+}
+button.mixed-label-type-button,
+button.statistic-label-type-button {
+   width: 50px;
+   height: 50px;
+   padding: 0px;
+   color: white;
+   text-shadow: 0 0 9px #000000;
+   text-align: center;
+   border: 1px solid var(--main-border-color);
+   border-radius: 4px;
+   background-size: cover;
+   background-position: center center;
+   -webkit-filter: grayscale(80%);
+}
+
+button.statistic-label-type-button {
+   -webkit-filter: grayscale(0%);
+}
+
+.on-off-toggle {
+   display: inline-block;
+   padding: 2px 4px 1px 4px;
+   width: max-content;
+   font-size: 0.85em;
+   color: var(--main-text-color);
+   background-color: inherit;
+   border: none;
+   border-bottom: solid 2px var(--border-color-variant-1);
+   appearance: none;
+   outline: none;
+   cursor: pointer;
+}
+.on-off-toggle::after {
+   content: "Off";
+   display: inline-flex;
+   justify-content: center;
+   width: 18px;
+   color: var(--main-text-color-disabled);
+}
+.on-off-toggle.checked::after {
+   content: "On";
+   color: var(--main-text-color);
+}
+.on-off-toggle.checked.disabled::after {
+   color: var(--main-text-color-disabled);
+}
+.on-off-toggle.disabled {
+   color: var(--main-text-color-disabled);
+   border-color: var(--border-color-variant-2);
+   cursor: default;
+   pointer-events: none;
+}
+
+.iterator {
+   display: inline-block;
+   border: none;
+   appearance: none;
+   outline: none;
+   cursor: pointer;
+}
+.iterator option {
+   position: absolute;
+   display: inline-flex;
+   justify-content: center;
+}
+
+.button-variant-container {
+   border-radius: 3px;
+   background-color: var(--main-text-color);
+   box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+   /* box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(0, 0, 0, 0.4); */
+}
+.button-variant {
+   display: flex;
+   padding: 0;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+   border-radius: inherit;
+   background-color: transparent;
+   cursor: pointer;
+   border: none;
+}
+.button-variant.disabled {
+   color: color-mix(
+      in hsl shorter hue,
+      var(--secondary-background-color-variant-4) 50%,
+      transparent 50%
+   );
+}
+.button-variant:hover:not(.disabled),
+.button-variant:focus:not(.disabled) {
+   outline: none;
+   background-color: color-mix(
+      in hsl shorter hue,
+      var(--secondary-background-color-variant-3) 25%,
+      transparent 75%
+   );
+}
+.button-variant:active:not(.disabled),
+.button-variant.active:not(.disabled) {
+   background-color: color-mix(
+      in hsl shorter hue,
+      var(--secondary-background-color-variant-3) 50%,
+      transparent 50%
+   );
+}

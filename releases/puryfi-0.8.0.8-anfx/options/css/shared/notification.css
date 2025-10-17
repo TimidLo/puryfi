@@ -1,0 +1,127 @@
+@keyframes create-notification {
+   from {
+      transform: scale(0);
+      height: 0;
+      margin-bottom: 0;
+   }
+   to {
+      transform: scale(1);
+      height: 2.75rem;
+      margin-bottom: 0.625rem;
+   }
+}
+
+@keyframes remove-notification {
+   from {
+      transform: scale(1);
+      height: 2.75rem;
+      margin-bottom: 0.625rem;
+   }
+   to {
+      transform: scale(0);
+      height: 0;
+      margin-bottom: 0;
+   }
+}
+
+#notifications-area {
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 100vw;
+   height: 100vh;
+   padding: 1.25rem 0;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   pointer-events: none;
+   z-index: 9;
+
+   .notification {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      justify-content: start;
+      position: relative;
+      padding-bottom: 0.25rem;
+      margin-top: 0;
+      max-width: calc(100% - 4rem);
+      color: var(--main-text-color-variant-1);
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      transform-origin: top center;
+      transform: scale(0);
+      pointer-events: all;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+
+      .notification__quote-inline {
+         font-size: 0.8rem;
+         padding: 0.125rem 0.25rem;
+         background-color: var(--secondary-background-color-variant-1);
+         border-radius: 3px;
+         cursor: pointer;
+      }
+
+      .notification__icon-container {
+         padding: 0 0.5rem;
+         width: 1.625rem;
+         height: 1.625rem;
+      }
+
+      .notification__content {
+         font-size: 0.85rem;
+         padding: 0 0.75rem 0 0;
+      }
+
+      .notification__progress-bar {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         border-radius: 3px;
+         height: 0.25rem;
+         background-color: var(--main-text-color-variant-1);
+      }
+   }
+
+   .notification.danger {
+      background-color: var(--caution-button-color-variant-1);
+      color: var(--caution-button-color);
+
+      .notification__progress-bar {
+         background-color: var(--caution-button-color);
+      }
+
+      .notification__quote-inline {
+         background-color: var(--caution-button-color-variant-2);
+      }
+   }
+
+   .notification.warning {
+      background-color: var(--warning-color-variant-1);
+      color: var(--warning-color);
+
+      .notification__progress-bar {
+         background-color: var(--warning-color);
+      }
+
+      .notification__quote-inline {
+         background-color: var(--warning-color-variant-2);
+      }
+   }
+
+   .notification.success {
+      background-color: var(--main-accent-color);
+
+      .notification__progress-bar {
+         background-color: var(--main-accent-color-variant-4);
+      }
+
+      .notification__quote-inline {
+         background-color: var(--main-accent-color-variant-1);
+      }
+   }
+}

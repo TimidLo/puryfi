@@ -1,0 +1,68 @@
+io-toggle[check] {
+    /* background-color: #237666; */
+}
+io-toggle {
+    --width: 30px;
+    --height: 8px;
+    display: inline-block;
+	float: right;
+	margin-top: -1px;
+    width: var(--width);
+    height: var(--height);
+    border-radius: 4px;
+    background-color: var(--main-input-color-variant-1);
+    cursor: pointer;
+    transition: background 0.2s ease-out;
+    will-change: background;
+    transform: translatey(6px);
+    line-height: 1.4rem;
+}
+#overall-state io-toggle {
+    float: initial;
+}
+button.checkbox {
+    width: calc(var(--height) * 2);
+    height: calc(var(--height) * 2);
+    padding: 0;
+    border: 2px solid var(--main-input-color-variant-1);
+    border-radius: var(--height);
+    outline: none;
+    cursor: pointer;
+    transition: border 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out, width 0.2s ease-out;
+    transform: translateY(-0.9em) translateX(0px);
+    will-change: border, box-shadow, transform, width;
+}
+#content-filetypes button.checkbox {
+    transform: translateY(-1em) translateX(0px);
+}
+io-toggle[disabled], io-toggle[check][disabled] {
+    background-color: dimgrey;
+}
+button.checkbox[check] {
+    /* border: 2px solid #237666; */
+    background-color: var(--main-accent-color);
+    transform: translateY(-0.9em) translateX(16px);
+}
+#content-filetypes button.checkbox[check],
+#content-general button.checkbox[check],
+#content-oom button.checkbox[check],
+#content-statistics button.checkbox[check],
+#content-security button.checkbox[check]
+{
+    transform: translateY(-1em) translateX(16px);
+}
+
+#content-filetypes button.checkbox,
+#content-general button.checkbox,
+#content-oom button.checkbox,
+#content-statistics button.checkbox,
+#content-security button.checkbox
+{
+    transform: translateY(-1em) translateX(0px);
+}
+
+button.checkbox:disabled, button.checkbox[check]:disabled {
+    border: 2px solid #484848;
+    background-color: dimgrey;
+}
+
